@@ -1,0 +1,352 @@
+.about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    height: 100vh;
+    background: rgb(40, 40, 44);
+}
+
+.image-container {
+    height: 90vh;
+    padding-right: 70px;
+    padding-left: 97px;
+    margin-top: 49px;
+    width: 50%;
+    background: radial-gradient(circle, #047761 0%, #4345d77d 1%, rgb(40, 40, 44) 60%);
+}
+
+// .fondu {
+//     position: absolute;
+//     top: 25%;
+//     right: 15%;
+//     height: 80vh;
+//     width: 50%;
+//     background: rgb(40,40,44);
+//     background: radial-gradient(circle, rgba(4,137,112,1) 0%, rgba(25,83,72,1) 0%, rgba(40,40,44,1) 31%);
+// }
+
+.aboutmetext {
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
+}
+
+.presentation-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    text-align: left;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    top: 45%;
+    width: 40%;
+    left: 50%;
+    z-index: 2;
+    text-align: justify;
+}
+
+.circle-container {
+    position: relative;
+}
+
+.big-circle {
+    position: absolute;
+    left: 15%;
+    top: 25%;
+}
+
+.small-circle {
+    position: absolute;
+    left: 5%;
+    bottom: 15%;
+    transform: translate(50%, 0);
+}
+
+.circle-image {
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.big-circle .circle-image {
+    width: 500px;
+    /* Adjusted size */
+    height: 500px;
+    /* Adjusted size */
+}
+
+.bubble {
+    box-shadow: none;
+    object-fit: contain;
+}
+
+.small-circle .circle-image {
+    width: 200px;
+    /* Adjusted size */
+    height: 200px;
+    /* Adjusted size */
+}
+
+.text-container {
+    position: absolute;
+    left: 35%;
+    top: 20%;
+}
+
+.text-container h1 {
+    font-size: 6rem;
+    color: white;
+    font-weight: bold;
+}
+
+.little-arrow {
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    width: 150px;
+    height: 100px;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    height: 163vh;
+    background: rgb(40, 40, 44);
+
+    .competences {
+        font-size: 50px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin: 0;
+        position: absolute;
+        top: 15%;
+        left: 15%;
+    }
+
+    .big-arrow {
+        position: absolute;
+        top: 15%;
+        right: 10%;
+        width: 800px;
+        height: 100px;
+        z-index: 2;
+    }
+
+
+}
+
+.container-skillsTree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 1%;
+    top: 40%;
+    perspective: 1000px;
+    height: 55vh;
+    width: 60%;
+    z-index: 2;
+}
+
+.skill-item {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+}
+
+.skill-item h3 {
+    margin: 10px 0;
+    color: var(--port-white);
+    text-align: center;
+}
+
+.skill-item ng-lottie {
+    width: 100px;
+    height: 100px;
+}
+
+.skill:hover .skill-item {
+    transform: rotateY(20deg) rotateX(10deg) translateZ(20px);
+}
+
+
+.fondu {
+    width: 100vh;
+    height: 100vh;
+    border-radius: 9999px;
+    position: absolute;
+    z-index: 1;
+    top: 60%;
+    left: 60%;
+
+    img {
+        position: absolute;
+        z-index: 1;
+        top: 20%;
+        left: 10%;
+    }
+
+    background: radial-gradient(circle, rgba(107, 107, 107, 1) 0%, rgba(98, 98, 98, 1) 6%, rgba(77, 77, 78, 1) 24%, rgba(60, 60, 64, 1) 44%, rgba(40, 40, 44, 1) 71%);
+}
+
+.skill-texte-container {
+    position: absolute;
+    top: 31%;
+    right: 5%;
+    z-index: 2;
+
+    .skill-texte {
+        color: white;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 0px;
+
+
+        h4 {
+            font-weight: 800;
+            font-size: 25px;
+            height: 10px;
+            color: #047761;
+        }
+
+        p {
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--port-white);
+        }
+
+        &.left {
+            align-items: end;
+        }
+    }
+
+}
+
+.Passion {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 365%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    app-passion-card {
+    z-index: 2;
+    }
+
+    .title {
+        display: flex;
+        padding-left: 10%;
+        padding-bottom: 5%;
+        z-index: 2;
+
+        .big-arrow-reverse {
+            width: 800px;
+            height: 100px;
+            z-index: 2;
+            padding-top: 30px;
+        }
+
+        h1 {
+            display: flex;
+            align-self: start;
+            font-size: 4rem;
+            color: white;
+            font-weight: bold;
+        }
+    }
+
+    .fondu {
+        width: 100vh;
+        height: 100vh;
+        border-radius: 9999px;
+        position: absolute;
+        z-index: 1;
+        top: -40%;
+        left: -20%;
+        img {
+            position: absolute;
+            z-index: 1;
+            top: 20%;
+            left: 10%;
+        }
+    
+        background: radial-gradient(circle, rgba(107, 107, 107, 1) 0%, rgba(98, 98, 98, 1) 6%, rgba(77, 77, 78, 1) 24%, rgba(60, 60, 64, 1) 44%, rgba(40, 40, 44, 1) 71%);
+    }
+
+
+}
+
+.competences {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 470%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    app-passion-card {
+    z-index: 2;
+    }
+
+    .title {
+        display: flex;
+        padding-left: 10%;
+        padding-bottom: 5%;
+        z-index: 2;
+
+        .big-arrow-reverse {
+            width: 800px;
+            height: 100px;
+            z-index: 2;
+            padding-top: 30px;
+        }
+
+        h1 {
+            display: flex;
+            align-self: start;
+            font-size: 4rem;
+            color: white;
+            font-weight: bold;
+        }
+    }
+
+    .fondu {
+        width: 100vh;
+        height: 100vh;
+        border-radius: 9999px;
+        position: absolute;
+        z-index: 1;
+        top: -40%;
+        left: -20%;
+        img {
+            position: absolute;
+            z-index: 1;
+            top: 20%;
+            left: 10%;
+        }
+    
+        background: radial-gradient(circle, rgba(107, 107, 107, 1) 0%, rgba(98, 98, 98, 1) 6%, rgba(77, 77, 78, 1) 24%, rgba(60, 60, 64, 1) 44%, rgba(40, 40, 44, 1) 71%);
+    }
+}

@@ -1,0 +1,27 @@
+<div class="container">
+    <img class="port-title" src="/assets/images/portfolio.png" alt="">
+    <div class="timeline">
+        <div class="timeline-bar"></div>
+        <div *ngFor="let project of projectList" class="timeline-item">
+            <div class="project-content">
+                <div class="project-point"></div>
+                <img [src]="project.image" alt="Project Image" class="project-image">
+                <div class="project-flex2">
+                    <div class="project-text">
+                        <h1>{{project.title}}</h1>
+                        <div class="p">
+                            <p>
+                                {{ project.text }}
+                            </p>
+                        </div>
+                    </div>
+                    <app-download-button [text]="project.buttonCV.text" [link]="project.buttonCV.link"
+                        [svgLink]="project.buttonCV.svgLink" [color]="project.buttonCV.color"></app-download-button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <app-contact-me></app-contact-me>
+    </div>
+</div>

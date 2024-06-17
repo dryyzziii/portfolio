@@ -1,0 +1,93 @@
+#wrap {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+
+.animation {
+  width: 200px;
+  height: 50px;
+}
+
+.btn-slide {
+  display: block;
+  position: relative;
+  width: var(--btn-width, 250px); /* Utilisation de la variable CSS pour la largeur */
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid var(--second-color);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: .5s;
+  margin: 20px auto;
+  color: var(--second-color);
+}
+
+.btn-slide:hover {
+  background: var(--second-color);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-slide span.circle {
+  display: flex;
+  background-color: white;
+  color: #fff;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  line-height: 42px;
+  height: 40px;
+  width: 40px;
+  transition: .5s;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-slide span.title,
+.btn-slide span.title-hover {
+  position: absolute;
+  text-transform: uppercase;
+  left: 60px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: bold;
+  transition: .5s;
+  color: var(--second-color);
+}
+
+.btn-slide span.title-hover {
+  opacity: 0;
+  color: white;
+}
+
+/* Utilisation de calc() pour transformer dynamiquement */
+.btn-slide:hover span.circle {
+  transform: translateX(calc(var(--btn-width, 250px) - 50px)); /* Calcul dynamique */
+}
+
+.btn-slide:hover span.title {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+.btn-slide:hover span.title-hover {
+  transform: translateX(-40px);
+  opacity: 1;
+}
+
+.btn-slide:hover {
+  cursor: pointer;
+}
+
+/* Condition spécifique pour la largeur de 150px */
+.btn-slide[data-width="150px"] {
+  --btn-width: 150px;
+}
+
+.btn-slide[data-width="150px"]:hover span.circle {
+  transform: translateX(100px); /* Transformation spécifique pour la largeur de 150px */
+}
+

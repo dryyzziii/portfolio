@@ -1,0 +1,20 @@
+<div class="container">
+    <img class="logo" src="assets/images/logo.png" alt="">
+    <div class="container-categorie">
+      <div
+        class="label-div"
+        *ngFor="let item of categorie"
+        (click)="navigateToCategory(item)"
+        [class.active]="activeCategory === item"
+      >
+        <label for="categorie">{{ item }}</label>
+      </div>
+    </div>
+    <div class="container-svg">
+      <img src="assets/svg/mail.svg" alt="">
+      <img src="assets/svg/twitter.svg" alt="">
+      <img src="assets/svg/linkedin.svg" alt="">
+      <img src="assets/svg/instagram.svg" alt="">
+    </div>
+  </div>
+  

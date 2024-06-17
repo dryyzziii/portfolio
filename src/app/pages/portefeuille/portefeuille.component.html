@@ -1,0 +1,22 @@
+<app-header-port [categorie]="this.categorie"></app-header-port>
+<div class="container" *ngIf="project">
+    <h1>{{ project.title }} <span> - {{ project.date }}</span></h1>
+    <div class="main-image">
+      <img [src]="currentImage" alt="{{ project.title }}">
+    </div>
+    <div>
+      <div class="images">
+        <div class="thumbnail" *ngFor="let img of project.imageTab; let i = index">
+          <img [src]="img" alt="Project Image" (click)="setCurrentImage(img)" [class.selected]="img === currentImage">
+        </div>
+      </div>
+      <div class="texte">
+        <p>{{ project.text }}</p>
+      </div>
+      
+      
+    </div>
+    <app-download-button (click)="navigateToProject(project.buttonCV.link)" [color]="color" [link]="project.buttonCV.link" [svgLink]="project.buttonCV.svgLink" [text]="project.buttonCV.text"></app-download-button>
+
+  </div>
+  

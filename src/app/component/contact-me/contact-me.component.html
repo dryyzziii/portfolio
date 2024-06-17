@@ -1,0 +1,22 @@
+<div class="container" id="contact">
+    <div class="fondu-rond"><img src="assets/images/rond-bg.png" alt=""></div>
+    <div class="arrow"><img src="assets/svg/little-arrow.svg" alt=""></div>
+    <h1>Contact me</h1>
+    <form (ngSubmit)="sendEmail()" #contactForm="ngForm">
+      <div class="form-group">
+        <label for="full-name">Full name <span style="color: red;">*</span></label>
+        <input type="text" id="full-name" [(ngModel)]="fullName" name="fullName" placeholder="Enter your full name ..." required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email <span style="color: red;">*</span></label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Enter your email ..." required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message <span style="color: red;">*</span></label>
+        <textarea id="message" [(ngModel)]="message" name="message" placeholder="Enter your message ..." required></textarea>
+      </div>
+      <button type="submit" class="btn-slide" [style.width]="'150px'" [disabled]="!contactForm.form.valid">
+        <app-download-button [text]="button.text" [link]="button.link" [svgLink]="button.svgLink" [width]="'150px'"></app-download-button>
+      </button>
+    </form>
+  </div>

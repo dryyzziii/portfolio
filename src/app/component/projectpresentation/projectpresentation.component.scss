@@ -1,0 +1,187 @@
+.container {
+    h1 {
+        display: flex;
+        align-self: start;
+        justify-content: flex-end;
+        width: 88rem;
+        font-size: 6rem;
+        color: white;
+        font-weight: bold;
+    }
+
+    .form {
+        position: absolute;
+        top: 34rem;
+        left: -10rem;
+        height: 60rem;
+        width: 60rem;
+        background: radial-gradient(circle, rgb(107, 107, 107) 0%, rgb(98, 98, 98) 6%, rgb(77, 77, 78) 24%, rgb(60, 60, 64) 44%, rgb(40, 40, 44) 71%);
+
+        img {
+            position: absolute;
+            top: 24rem;
+            left: 13rem;
+        }
+    }
+
+    .cross {
+        position: absolute;
+        top: 16rem;
+        right: -13rem;
+        height: 20rem;
+        width: 20rem;
+        background: radial-gradient(circle, rgba(255,255,255,0.577468487394958) 0%, rgba(219,219,219,0.5046393557422969) 5%, rgba(162,162,162,0.5354516806722689) 13%, rgba(149,147,147,0.5074404761904762) 15%, rgba(119,119,119,0.5326505602240896) 22%, rgba(40,40,44,1) 54%);
+
+        img {
+            position: absolute;
+            top: 7rem;
+            left: 7.3rem;
+        }
+    }   
+
+    img {
+        border-radius: 30px;
+    }
+
+    .projet1 {
+        cursor: pointer;
+        position: absolute;
+        top: 25rem;
+        left: 15rem;
+
+        img {
+            position: absolute;
+            height: 25rem;
+            width: 40rem;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .text {
+            position: absolute;
+            top: 0rem;
+            left: 39rem;
+            z-index: 2;
+            h1 {
+                font-size: 4rem;
+                display: block;
+                width: 25rem;
+                color: var(--second-color);
+            }
+            h2 {
+                font-weight: 400;
+            }
+            color:var(--port-white);
+        }
+    }
+
+    .projet2 {
+        cursor: pointer;
+        position: absolute;
+        top: 65rem;
+        left: 57rem;
+
+        .arrow-down {
+            position: absolute;
+            top: 0rem;
+            left: -23rem;
+            width: 5rem;
+        }
+
+        img {
+            position: absolute;
+            height: 25rem;
+            width: 40rem;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .text {
+            position: absolute;
+            top: 6rem;
+            left: -17rem;
+            z-index: 2;
+            h1 {
+                font-size: 4rem;
+                display: block;
+                width: 25rem;
+                color: var(--second-color);
+            }
+            h2 {
+                font-weight: 400;
+            }
+            color:var(--port-white);
+        }
+    }
+
+    .projet3 {
+        cursor: pointer;
+        position: absolute;
+        top: 104rem;
+        left: 15rem;
+
+        img {
+            position: absolute;
+            height: 25rem;
+            width: 40rem;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .text {
+            position: absolute;
+            top: 0rem;
+            left: 39rem;
+            z-index: 2;
+            h1 {
+                font-size: 4rem;
+                display: block;
+                width: 25rem;
+                color: var(--second-color);
+            }
+            h2 {
+                font-weight: 400;
+            }
+            color:var(--port-white);
+        }
+
+        .form90 {
+            height: 60rem;
+            width: 60rem;
+            position: absolute;
+            top: -23rem;
+            left: 40rem;
+
+            background: radial-gradient(circle, rgb(107, 107, 107) 0%, rgb(98, 98, 98) 6%, rgb(77, 77, 78) 24%, rgb(60, 60, 64) 44%, rgb(40, 40, 44) 71%);
+
+            img {
+                position: absolute;
+                top: 20rem;
+                right: 24rem;
+                object-fit: cover;
+                height: 20rem;
+                width: 10rem;
+            }
+        }
+    }
+
+    .seeMore {
+        position: absolute;
+        top: 133rem;
+        left: 47rem;
+        height: 2rem;
+        width: 25rem;
+        font-size: 1.5rem;
+        p {
+            text-decoration: underline;
+            color: var(--port-white);
+            cursor: pointer;
+        }
+    }
+}
+
+.fondu-top {
+    position: absolute;
+    width: 50rem;
+    height: 50rem;
+    top: -26rem;
+    left: -26rem;
+    background: radial-gradient(circle, #047761 0%, rgba(67, 69, 215, 0.4901960784) 1%, rgb(40, 40, 44) 60%);
+}

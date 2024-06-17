@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+    width: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    background: rgb(40,40,44);
+    //background: linear-gradient(165deg, rgba(40,40,44,1) 36%, var(--port-light-green) 100%);
+}
+
+
+@layer base {
+    :root {
+      --dark-grey: #28282C;
+      --dark-more-grey: #222225;
+      --second-color: #048970;
+      --port-blue: #0004fd;
+      --port-light-blue: #00b5ff;
+      --port-light-green: #acfcc0;
+
+
+
+
+      --port-white: #E7E3EE;
+      
+
+
+
+
+      --first-color-100: #ffffff;
+      --first-color-60: #ffffff60;
+      --first-color-30: #ffffff30;
+  
+  
+      --third-color-100: #33a9ff;
+      --third-color-60: #33a9ff60;
+      --third-color-30: #33a9ff30;
+
+      --third-color-hover: #3633ff;
+  
+      --color4-100: #000000;
+      --color4-60: #00000060;
+      --color4-40: #00000040;
+  
+      --title-line-height: 1.2;
+      --title-letter-spacing: -0.03em;
+      --title-font-size-xxl: clamp(4.6rem, 3vw, 5.6rem);
+      --title-font-size-xl: 4.6rem;
+      --title-font-size-l: 3.6rem;
+  
+      --text-line-height: 1.4;
+      --text-letter-spacing: -0.01em;
+      --text-font-size-xxl: clamp(2.6rem, 1.7vw, 3rem);
+      --text-font-size-xl: clamp(2.4rem, 1.65vw, 2.6rem);
+      --text-font-size-l: clamp(2rem, 1.6vw, 2.4rem);
+      --text-font-size-m: clamp(1.4rem, 1.2vw, 2rem);
+  
+      --alert-color-100: #CE2C31;
+      --alert-color-60: #CE2C3160;
+      --alert-color-40: #CE2C3140;
+      
+      --notify-color-100: #2cce4c;
+      --notify-color-60: #2cce4c;
+      --notify-color-40: #2cce4c;
+  
+      --background: 0 0% 100%;
+      --foreground: 240 10% 3.9%;
+  
+      --card: 0 0% 100%;
+      --card-foreground: 240 10% 3.9%;
+  
+      --popover: 0 0% 100%;
+      --popover-foreground: 240 10% 3.9%;
+  
+      --primary: 240 5.9% 10%;
+      --primary-foreground: 0 0% 98%;
+  
+      --secondary: 240 4.8% 95.9%;
+      --secondary-foreground: 240 5.9% 10%;
+  
+      --muted: 240 4.8% 95.9%;
+      --muted-foreground: 240 3.8% 46.1%;
+  
+      --accent: 240 4.8% 95.9%;
+      --accent-foreground: 240 5.9% 10%;
+  
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 0 0% 98%;
+  
+      --border: 240 5.9% 90%;
+      --input: 240 5.9% 90%;
+      --ring: 240 10% 3.9%;
+  
+      --radius: 0.5rem;
+    }
+  
+    .dark {
+      --background: 240 10% 3.9%;
+      --foreground: 0 0% 98%;
+  
+      --card: 240 10% 3.9%;
+      --card-foreground: 0 0% 98%;
+  
+      --popover: 240 10% 3.9%;
+      --popover-foreground: 0 0% 98%;
+  
+      --primary: 0 0% 98%;
+      --primary-foreground: 240 5.9% 10%;
+  
+      --secondary: 240 3.7% 15.9%;
+      --secondary-foreground: 0 0% 98%;
+  
+      --muted: 240 3.7% 15.9%;
+      --muted-foreground: 240 5% 64.9%;
+  
+      --accent: 240 3.7% 15.9%;
+      --accent-foreground: 0 0% 98%;
+  
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 0 0% 98%;
+  
+      --border: 240 3.7% 15.9%;
+      --input: 240 3.7% 15.9%;
+      --ring: 240 4.9% 83.9%;
+    }
+  }
+  
+
+  h1, label {
+    color: var(--first-color-100);
+  }
+
+   

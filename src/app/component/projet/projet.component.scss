@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+
+    img {
+        width: 500px;
+        height: 500px;
+        object-fit: contain;
+        display: block;
+        transition: transform 0.3s ease-in-out;
+        padding-left: 20px;
+        border: 2px solid var(--third-color-100);
+        border-radius: 10px;
+
+        &:hover {
+            transform: scale(1.1) rotate(-5deg);
+          }
+    }
+
+    p {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        text-align: center;
+    }
+}
+

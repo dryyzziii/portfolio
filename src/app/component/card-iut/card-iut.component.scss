@@ -1,0 +1,77 @@
+.container {
+  z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    left: 25%;
+    text-align: justify;
+
+    .flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;  
+        color: var(--port-white);
+
+        .card {
+            display: flex;
+            z-index: 2;
+            justify-content: space-between;
+            flex-direction: column;
+            background-color: var(--dark-more-grey);
+            border-radius: 50px;
+            height: 30rem;
+            width: 20rem;
+            padding: 25px;
+            transition: all 0.5s ease-in-out; /* Ajout de la transition */
+            
+            .highlight {
+                font-weight: bold;
+                color: #007bff; /* Choisissez la couleur que vous préférez */
+              }
+              
+            &:hover {
+              box-shadow: var(--port-light-blue) 0px 5px 15px;
+              background-color: #0059ff;
+            //   color: var(--dark-more-grey);
+              cursor: pointer;
+
+            //   h1 {
+            //     color: var(--port-blue);
+            //   }
+
+              .highlight {
+                font-weight: bold;
+                color: var(--second-color); /* Choisissez la couleur que vous préférez */
+              }
+            }
+
+
+            
+          }
+          
+    }
+}
+
+.form {
+  width: 100vh;
+    height: 100vh;
+    border-radius: 9999px;
+    position: absolute;
+    z-index: 1;
+    top: -46%;
+    left: 60%;
+
+    img {
+        position: absolute;
+        z-index: 1;
+        top: 20%;
+        left: 10%;
+    }
+
+    background: radial-gradient(circle, rgba(107, 107, 107, 1) 0%, rgba(98, 98, 98, 1) 6%, rgba(77, 77, 78, 1) 24%, rgba(60, 60, 64, 1) 44%, rgba(40, 40, 44, 1) 71%);
+}

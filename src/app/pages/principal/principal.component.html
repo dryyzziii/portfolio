@@ -1,0 +1,32 @@
+<app-header [categorie]="categorie"></app-header>
+<div class="container" id="home">
+  <div class="container-flex1 slide-in-left">
+    <div class="container-lottie">
+      <ng-lottie [options]="options"></ng-lottie>
+    </div>
+  </div>
+  <div class="container-flex2 slide-in-right">
+    <div class="container-text">
+      <div>
+        <h1>CHARLES</h1>
+        <h1>DENNER</h1>
+      </div>
+      <div class="presentation">
+        <p>full-stack web developper</p>
+        <p>Actuellement en 2ème année de BUT informatique</p>
+        <app-download-button [text]="buttonCV.text" [link]="buttonCV.link" [svgLink]="buttonCV.svgLink"
+          [linkName]="buttonCV.linkName!"></app-download-button>
+      </div>
+    </div>
+    <img class="faded-image" src="assets/images/moi.png" alt="">
+  </div>
+</div>
+<div>
+  <app-aboutme id="about" appAnimateOnScroll animationClass="fade-in-slide-up"></app-aboutme>
+</div>
+<div class="container-portfolio" id="portfolio" appAnimateOnScroll>
+  <app-projectpresentation [projet1]="projects[0]" [projet2]="projects[1]" [projet3]="projects[2]" [projet4]="projects[3]"></app-projectpresentation>
+</div>
+<div class="container-contact" id="contact" appAnimateOnScroll animationClass="slide-in-left">
+  <app-contact-me></app-contact-me>
+</div>

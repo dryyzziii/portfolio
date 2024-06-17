@@ -1,0 +1,18 @@
+.container-skillsTree {
+  width: 40vw;
+  height: 70vh;
+  position: absolute;
+  top: 2%;
+  left: 3%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.skill-item {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--port-white);
+  width: 100px;
+  height: 100px;
+}
