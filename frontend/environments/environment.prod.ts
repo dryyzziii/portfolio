@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://your-api-url.com'
+    apiUrl: 'https://portfolio-charles-projects-19cc1397.vercel.app/send-email'
   };
   
