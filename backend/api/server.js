@@ -35,4 +35,4 @@ app.post('/send-email', (req, res) => {
     });
   });
 
-const PORT = process.env.PORT || 3000;
+module.exports = app;

@@ -19,6 +19,6 @@ export class EmailService {
   constructor(private http: HttpClient) { }
 
   sendEmail(emailData: EmailData): Observable<any> {
-    return this.http.post(this.apiUrl, emailData);
+    return this.http.post(`${this.apiUrl}/send-email`, emailData);
   }
 }
