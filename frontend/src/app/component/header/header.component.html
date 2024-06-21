@@ -1,20 +1,27 @@
 <div class="container">
-    <img class="logo" src="assets/images/logo.png" alt="">
-    <div class="container-categorie">
-      <div
-        class="label-div"
-        *ngFor="let item of categorie"
-        (click)="navigateToCategory(item)"
-        [class.active]="activeCategory === item"
-      >
-        <label for="categorie">{{ item }}</label>
-      </div>
-    </div>
-    <div class="container-svg">
-      <img src="assets/svg/mail.svg" alt="">
-      <img src="assets/svg/twitter.svg" alt="">
-      <img src="assets/svg/linkedin.svg" alt="">
-      <img src="assets/svg/instagram.svg" alt="">
+  <img class="logo" src="assets/images/logo.png" alt="Logo">
+  <div class="container-categorie">
+    <div
+      class="label-div"
+      *ngFor="let item of categorie"
+      (click)="navigateToCategory(item)"
+      [class.active]="activeCategory === item"
+    >
+      <label for="categorie">{{ item }}</label>
     </div>
   </div>
-  
+  <div class="container-svg">
+    <a href="mailto:charlesdenner69360@gmail.com" target="_blank">
+      <img src="assets/svg/mail.svg" alt="Email">
+    </a>
+    <a href="https://twitter.com/yourusername" target="_blank">
+      <img src="assets/svg/twitter.svg" alt="Twitter">
+    </a>
+    <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank">
+      <img src="assets/svg/linkedin.svg" alt="LinkedIn">
+    </a>
+    <a href="https://www.instagram.com/charless_dnr" target="_blank">
+      <img src="assets/svg/instagram.svg" alt="Instagram">
+    </a>
+  </div>
+</div>

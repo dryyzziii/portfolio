@@ -28,7 +28,7 @@ export class PortefeuilleComponent {
       const projectId = Number(params.get('id'));
       this.projetsService.setProjectById(projectId);
     });
-    this.categorie = ["home","about", "portfolio", "contact"]
+    this.categorie = ["home","about", "portfolio", "contact", 'projets']
 
     this.projetsService.getProject().subscribe(project => {
       this.project = project;

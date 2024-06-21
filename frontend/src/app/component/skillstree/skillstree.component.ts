@@ -1,7 +1,8 @@
 import { CommonModule, NgFor } from '@angular/common';
-import { Component, ElementRef, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, OnDestroy, HostListener, WritableSignal, effect } from '@angular/core';
 import * as THREE from 'three';
 import { FBXLoader } from 'three-stdlib';
+import { LoaderService } from '../../services/loader.service';
 
 @Component({
   selector: 'app-skillstree',
@@ -15,6 +16,7 @@ export class SkillsTreeComponent implements AfterViewInit, OnDestroy {
   private scene: THREE.Scene | undefined;
   private camera: THREE.PerspectiveCamera | undefined;
   private animationFrameId: number | undefined;
+  private lastRenderTime: number = 0;
   private mouseX: number = 0;
   private mouseY: number = 0;
   private isMouseDown: boolean = false;
@@ -23,6 +25,8 @@ export class SkillsTreeComponent implements AfterViewInit, OnDestroy {
   private containerRect: DOMRect | undefined;
   private skillPositions: { x: number; y: number; z: number; offsetX: number; offsetY: number; offsetZ: number }[] = [];
   private models: { [key: string]: THREE.Object3D } = {};
+  private modelsLoaded: number = 0;
+  public currentLoaderStatus: WritableSignal<any> = this.loaderService.currentLoaderStatus;
 
   public skills = [
     { name: 'React', modelPath: '/assets/fbx/react.fbx' },
@@ -37,27 +41,36 @@ export class SkillsTreeComponent implements AfterViewInit, OnDestroy {
     { name: 'VueJS', modelPath: '/assets/fbx/vuejs.fbx' }
   ];
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private loaderService: LoaderService) {
+    effect(() => {
+      const a = this.currentLoaderStatus();
+    });
+    if (this.currentLoaderStatus() !== false) {
+      this.currentLoaderStatus.set(true); // Start loader
+    }
+  }
 
   ngAfterViewInit() {
     this.initThreeJS();
     this.loadModels();
-    this.animate();
   }
 
   ngOnDestroy() {
     if (this.animationFrameId) {
       cancelAnimationFrame(this.animationFrameId);
     }
-    this.renderer!.dispose();
+    if (this.renderer) {
+      this.renderer.dispose();
+    }
   }
 
   private initThreeJS() {
     const container = this.el.nativeElement.querySelector('.container-skillsTree');
     this.containerRect = container.getBoundingClientRect();
 
-    // Initialize renderer
-    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    // Initialize renderer with lower resolution for performance
+    this.renderer = new THREE.WebGLRenderer({ alpha: true });
+    this.renderer.setPixelRatio(window.devicePixelRatio * 0.8); // Reduce rendering resolution
     this.renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(this.renderer.domElement);
 
@@ -93,43 +106,63 @@ export class SkillsTreeComponent implements AfterViewInit, OnDestroy {
   }
 
   private loadModels() {
-    const loader = new FBXLoader();
 
-    this.skills.forEach(skill => {
+    const loader = new FBXLoader();
+    const promises = this.skills.map(skill => this.loadModel(loader, skill));
+
+    Promise.all(promises).then(() => {
+      this.addModelsToScene();
+      this.animate();
+    }).catch((error) => {
+      console.error('Error loading models:', error);
+    }).finally(() => {
+      this.currentLoaderStatus.set(false); // Stop loader
+    });
+  }
+
+  private loadModel(loader: FBXLoader, skill: { name: string, modelPath: string }): Promise<void> {
+    return new Promise((resolve, reject) => {
       loader.load(skill.modelPath, (object) => {
         object.scale.set(10, 10, 10); // Adjust scaling of the models
 
         // Ensure materials are applied correctly
         object.traverse(function (child) {
           if (child instanceof THREE.Mesh) {
-            // Make sure the color and texture are correctly applied
+            // Simplify materials for performance
             if (child.material.map) {
-              child.material = new THREE.MeshStandardMaterial({
-                map: child.material.map
-              });
+              child.material = new THREE.MeshBasicMaterial({ map: child.material.map });
             } else {
-              child.material = new THREE.MeshStandardMaterial({
-                color: child.material.color
-              });
+              child.material = new THREE.MeshBasicMaterial({ color: child.material.color });
             }
           }
         });
 
         this.models[skill.name] = object;
-        this.scene!.add(object);
+        resolve();
       }, undefined, (error) => {
         console.error(`Error loading ${skill.name} model:`, error);
+        reject(error);
       });
     });
+  }
+
+  private addModelsToScene() {
+    for (const skill of this.skills) {
+      this.scene!.add(this.models[skill.name]);
+    }
   }
 
   private animate() {
     this.animationFrameId = requestAnimationFrame(() => this.animate());
 
-    // Update the position styles dynamically
-    this.updateSkillPositions();
+    const now = Date.now();
+    const deltaTime = now - this.lastRenderTime;
 
-    this.renderer!.render(this.scene!, this.camera!);
+    if (deltaTime > 1000 / 30) { // Throttle to 30 FPS
+      this.updateSkillPositions();
+      this.renderer!.render(this.scene!, this.camera!);
+      this.lastRenderTime = now;
+    }
   }
 
   private updateSkillPositions() {
@@ -188,3 +221,4 @@ export class SkillsTreeComponent implements AfterViewInit, OnDestroy {
     }
   }
 }
+
