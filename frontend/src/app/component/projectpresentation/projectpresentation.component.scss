@@ -185,3 +185,14 @@
     left: -26rem;
     background: radial-gradient(circle, #047761 0%, rgba(67, 69, 215, 0.4901960784) 1%, rgb(40, 40, 44) 60%);
 }
+@media (max-width: 1480px){
+    #portfolio-title {
+        height: 27rem;
+        width: 36rem;
+        position: absolute;
+        z-index: 4;
+        left: 45rem;
+        object-fit: cover;
+        top: -5rem;
+    }
+}
