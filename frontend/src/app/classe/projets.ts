@@ -8,8 +8,9 @@ export class projet {
     buttonCV: button;
     date?: string
     imageTab?: string[]
+    logo?: string[]
   
-    constructor(id: number,image: string,title: string, text: string, button: button, date?:string, imageTab?: string[]) {
+    constructor(id: number,image: string,title: string, text: string, button: button, date?:string, imageTab?: string[], logo?: string[]) {
       this.image = image;
       this.id = id;
       this.text = text;
@@ -17,5 +18,6 @@ export class projet {
       this.title = title;
       this.date = date
       this.imageTab = imageTab
+      this.logo = logo;
     }
 }

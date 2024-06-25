@@ -1,5 +1,5 @@
 <div class="container">
-   <h1>Mes Projets</h1>
+   <img id="portfolio-title" src="assets/images/portfolio.png" alt="">
    <div class="fondu"></div>
    <div class="fondu-top"></div>
    <div class="cross"><img src="assets/svg/cross.svg" alt=""></div>
@@ -9,7 +9,11 @@
          <div class="text">
             <h1>{{projet1.title}}</h1>
             <h2>{{projet1.date!}}</h2>
-         </div>
+            <div id="container-logo">
+               <div ><img id="logo" src="assets/images/symfonyLogo.png" alt=""></div>
+               <div ><img id="logo" src="assets/images/vueJSLogo.png" alt=""></div>   
+            </div>
+            </div>
         
    </div>
    <div class="projet2" (click)="setProject(projet2)">
@@ -18,6 +22,7 @@
       <div class="text">
          <h1>{{projet2.title}}</h1>
          <h2>{{projet2.date!}}</h2>
+         <div ><img id="logo" src="assets/images/Kotlin_Icon.png" alt=""></div>
       </div>
    </div>
    <div class="projet3" (click)="setProject(projet3)">
@@ -26,6 +31,7 @@
       <div class="text">
          <h1>{{projet3.title}}</h1>
          <h2>{{projet3.date!}}</h2>
+         <div ><img id="logo" src="assets/svg/reactLogo.svg" alt=""></div>   
       </div>
    </div>
    <!-- <div class="projet4">

@@ -1,11 +1,11 @@
 @media (max-height: 800px){
   .container-portfolio {
     position: absolute;
-    top: 725%;
+    top: 740%;
 }
 .container-contact {
   position: absolute;
-  top: 1030%;
+  top: 1060%;
   left: 53%;
   height: 100vh;
 }
@@ -13,7 +13,7 @@
 @media (min-height: 800px){
   .container-portfolio {
     position: absolute;
-    top: 660%;
+    top: 670%;
 }
 .container-contact {
   position: absolute;
@@ -98,17 +98,9 @@
     }
 }
 
-.container-portfolio {
-    position: absolute;
-    top: 630%;
-}
 
-.container-contact {
-    position: absolute;
-    top: 870%;
-    left: 50%;
-    height: 100vh;
-}
+
+
 
 @keyframes fadeInSlideUp {
     0% {

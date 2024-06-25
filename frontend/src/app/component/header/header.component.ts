@@ -32,6 +32,10 @@ export class HeaderComponent implements OnInit {
   }
 
   navigateToCategory(category: string) {
-    this.navigationService.navigateToCategory(category);
+    if (category === 'projets') {
+      this.router.navigate(['/projets']);
+    } else {
+      this.navigationService.navigateToCategory(category);
+    }
   }
 }

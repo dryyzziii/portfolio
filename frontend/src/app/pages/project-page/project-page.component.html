@@ -1,0 +1,20 @@
+<app-header-port [categorie]="this.categorie"></app-header-port>
+<h1>Mes Projets</h1>
+<div class="container">
+  <div
+    class="projet"
+    *ngFor="let project of projects"
+    (click)="setProject(project)"
+  >
+    <img [src]="project.image" alt="projet1" />
+    <div class="text">
+      <h1>{{ project.title }}</h1>
+      <h2>{{ project.date! }}</h2>
+      <div class="container-logo">
+        <div *ngFor="let item of project.logo">
+          <img id="logo" [src]="item" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

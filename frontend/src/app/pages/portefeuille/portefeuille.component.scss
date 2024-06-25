@@ -1,43 +1,84 @@
-.container {
+
+  @media (max-height: 800px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+      height: 122vh;
+      overflow: hidden;
+    }
+    .main-image img {
+      width: 53rem;
+      height: 35rem;
+      object-fit: contain;
+      margin-bottom: 20px;
+      border-radius: 20px;
+    }
+    .thumbnail img {
+      width: 9.5rem;
+      height: 5rem;
+      display: flex;
+      object-fit: cover;
+      cursor: pointer;
+      margin-right: 17px;
+      border-radius: 10px;
+    }
+    
+  .images {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    height: 100vh;
-    overflow: hidden;
+    flex-direction: row;
+    margin-right: -13px;
+    border-radius: 20px;
   }
-  
+  }
+  @media (min-height: 800px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .thumbnail img {
+      width: 10rem;
+      height: 5rem;
+      display: flex;
+      object-fit: cover;
+      cursor: pointer;
+      margin-right: 15px;
+      border-radius: 10px;
+    }
+
+    .main-image img {
+      width: 60rem;
+      height: 40rem;
+      object-fit: contain;
+      margin-bottom: 20px;
+      border-radius: 20px;
+    }
+    
   .images {
     display: flex;
     flex-direction: row;
     margin-right: 20px;
     border-radius: 20px;
   }
+  }
+  
   
   .thumbnail {
     margin-bottom: 10px;
   }
   
-  .thumbnail img {
-    width: 10rem;
-    height: 5rem;
-    display: flex;
-    object-fit: cover;
-    cursor: pointer;
-    margin-right: 15px;
-    border-radius: 10px;
-    
-  }
   
-  .main-image img {
-    width: 60rem;
-    height: 40rem;
-    object-fit: contain;
-    margin-bottom: 20px;
-    border-radius: 20px;
-  }
+  
+ 
 
   .thumbnail img.selected {
     filter: grayscale(100%) opacity(50%);

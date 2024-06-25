@@ -2,7 +2,6 @@ import { NgFor } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, NavigationEnd, Event } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { NavigationService } from '../../services/navigation-service.service';
 import { NavigationPortService } from '../../services/navigation-port.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { NavigationPortService } from '../../services/navigation-port.service';
   standalone: true,
   imports: [NgFor],
   templateUrl: './header-port.component.html',
-  styleUrl: './header-port.component.scss'
+  styleUrls: ['./header-port.component.scss']
 })
 export class HeaderPortComponent implements OnInit {
   @Input() categorie: string[] = [];
@@ -28,16 +27,19 @@ export class HeaderPortComponent implements OnInit {
         if (this.categorie.includes(currentFragment)) {
           this.activeCategory = currentFragment;
         } else {
-          this.activeCategory = 'portfolio';
+          this.activeCategory = 'projets';
         }
       });
 
     const initialFragment = this.router.url.split('#')[1];
-    this.activeCategory = this.categorie.includes(initialFragment) ? initialFragment : 'portfolio';
+    this.activeCategory = this.categorie.includes(initialFragment) ? initialFragment : 'projets';
   }
 
   navigateToCategory(category: string) {
-    this.navigationService.navigateToCategory(category);
+    if (category === 'projets') {
+      this.router.navigate(['/projets']);
+    } else {
+      this.navigationService.navigateToCategory(category);
+    }
   }
 }
-
