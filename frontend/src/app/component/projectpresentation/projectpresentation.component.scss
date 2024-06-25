@@ -172,6 +172,7 @@
 
 }
 @media (max-width: 1600px){
+.container {
     #portfolio-title {
         height: 27rem;
         width: 36rem;
@@ -224,6 +225,46 @@
             cursor: pointer;
         }
     }
+
+    .projet2 {
+        cursor: pointer;
+        position: absolute;
+        top: 65rem;
+        left: 43rem;
+
+        .arrow-down {
+            position: absolute;
+            top: 0rem;
+            left: -23rem;
+            width: 5rem;
+        }
+
+        img {
+            position: absolute;
+            height: 25rem;
+            width: 40rem;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .text {
+            position: absolute;
+            top: 6rem;
+            left: -17rem;
+            z-index: 2;
+            h1 {
+                font-size: 4rem;
+                display: block;
+                width: 25rem;
+                color: var(--second-color);
+            }
+            h2 {
+                font-weight: 400;
+            }
+            color:var(--port-white);
+        }
+    }
+}
+    
 }
 
 
@@ -299,6 +340,19 @@
         left: 45rem;
         object-fit: cover;
         top: -5rem;
+    }
+    .seeMore {
+        position: absolute;
+        top: 133rem;
+        left: 38rem;
+        height: 2rem;
+        width: 25rem;
+        font-size: 1.5rem;
+        p {
+            text-decoration: underline;
+            color: var(--port-white);
+            cursor: pointer;
+        }
     }
 }
 
